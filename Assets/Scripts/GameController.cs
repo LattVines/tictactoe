@@ -82,7 +82,6 @@ public class GameController : MonoBehaviour
 
             if(isSinglePlayer && isComputersTurn)
             {
-                print("computer's turn");
                 LazyGameAI();
             }
             else {
@@ -94,6 +93,7 @@ public class GameController : MonoBehaviour
             while (isWaiting){
                 yield return new WaitForSeconds(0.1f);
             }
+            gameMessages.ClearQueue();
 
             //after placement, disable placement until we're ready
             gameBoard.TogglePlacement(false);
